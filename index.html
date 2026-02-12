@@ -92,25 +92,31 @@
 
     </style>
 
-    <script>
-        function toggleTree() {
-            var tree = document.getElementById("tree");
-            if (tree.style.display === "block") {
-                tree.style.display = "none";
-            } else {
-                tree.style.display = "block";
-            }
-        }
-    </script>
+  <script>
+    // Unmute video on first click anywhere
+    document.addEventListener("click", function() {
+        var video = document.getElementById("bgVideo");
+        video.muted = false;
+        video.play();
+    }, { once: true });
 
+    function toggleTree() {
+        var tree = document.getElementById("tree");
+        if (tree.style.display === "block") {
+            tree.style.display = "none";
+        } else {
+            tree.style.display = "block";
+        }
+    }
+</script>
 </head>
 
 <body>
 
     <!-- Background Video -->
-    <video autoplay loop class="background-video" id="bgVideo">
+    <video <video autoplay muted loop class="background-video" id="bgVideo">
     <source src="bg.mp4" type="video/mp4">
-</video>
+    </video>
 
     <div class="overlay"></div>
 
@@ -151,5 +157,6 @@
 
 </body>
 </html>
+
 
 
