@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+      <!DOCTYPE html>
 <html>
 <head>
     <title>MAKI Zenin</title>
@@ -14,27 +14,28 @@
             font-family: Arial, sans-serif;
             color: white;
             text-align: center;
+            overflow-x: hidden;
         }
 
-        /* Background Video */
-        video {
+        /* Background Video Proper Fit */
+        .background-video {
             position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            z-index: -1;
-            object-fit: cover;
-        }
-
-        /* Dark overlay for readability */
-        .overlay {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
             top: 0;
             left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        /* Dark overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.65);
             z-index: -1;
         }
 
@@ -43,27 +44,39 @@
         }
 
         h1 {
-            font-size: 70px;
-            color: darkred;
-            text-shadow: 3px 3px 15px black;
-            margin-bottom: 30px;
+            font-size: 75px;
+            font-weight: 900;
+            color: #8b0000;
+            letter-spacing: 5px;
+            text-shadow: 3px 3px 20px black;
+            margin-bottom: 40px;
         }
 
         img {
-            width: 300px;
-            border: 4px solid darkred;
-            margin-bottom: 30px;
+            width: 500px;   /* BIG image */
+            max-width: 90%;
+            display: block;
+            margin: 0 auto 40px auto;
+            border: 5px solid #8b0000;
+            box-shadow: 0 0 30px rgba(139,0,0,0.8);
+        }
+
+        .description {
+            max-width: 900px;
+            margin: auto;
+            line-height: 1.8;
+            font-size: 18px;
         }
 
         button {
-            padding: 12px 25px;
+            margin-top: 40px;
+            padding: 15px 30px;
             font-size: 18px;
             font-weight: bold;
-            background: darkred;
+            background: #8b0000;
             color: white;
             border: none;
             cursor: pointer;
-            margin-top: 20px;
         }
 
         button:hover {
@@ -73,18 +86,19 @@
         .family-tree {
             display: none;
             margin-top: 30px;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0,0,0,0.7);
             padding: 20px;
         }
+
     </style>
 
     <script>
         function toggleTree() {
-            const tree = document.getElementById("tree");
-            if (tree.style.display === "none") {
-                tree.style.display = "block";
-            } else {
+            var tree = document.getElementById("tree");
+            if (tree.style.display === "block") {
                 tree.style.display = "none";
+            } else {
+                tree.style.display = "block";
             }
         }
     </script>
@@ -94,30 +108,45 @@
 <body>
 
     <!-- Background Video -->
-    <video autoplay muted loop>
+    <video autoplay muted loop class="background-video">
         <source src="bg.mp4" type="video/mp4">
     </video>
 
     <div class="overlay"></div>
 
     <div class="content">
+
         <h1>MAKI</h1>
 
-        <img src="ooo.png">
+        <img src="ooo.png" alt="Maki Zenin">
+
+        <div class="description">
+            <p>Maki Zenin is a powerful character from Jujutsu Kaisen.</p>
+            <p>She was born into the elite Zenin clan but lacked cursed energy.</p>
+            <p>Because of this, she was treated as inferior by her family.</p>
+            <p>Despite rejection, she trained her body to superhuman levels.</p>
+            <p>Maki relies on cursed tools instead of cursed techniques.</p>
+            <p>She aims to destroy the corrupt traditions of the Zenin clan.</p>
+            <p>Her bond with her twin sister Mai shaped her destiny.</p>
+            <p>She grows into one of the strongest physical fighters in the series.</p>
+            <p>Maki represents resilience and rebellion.</p>
+            <p>Her strength proves power isn’t inherited — it is built.</p>
+        </div>
 
         <button onclick="toggleTree()">Zenin Family Tree</button>
 
         <div class="family-tree" id="tree">
             <h2>Zenin Family Tree</h2>
-            <p><b>Naobito Zenin:</b> Former head of the Zenin clan.</p>
-            <p><b>Naoya Zenin:</b> Arrogant heir who disrespected Maki.</p>
-            <p><b>Ogi Zenin:</b> Father of Maki and Mai.</p>
-            <p><b>Maki Zenin:</b> Clan member who rejected their rules.</p>
-            <p><b>Mai Zenin:</b> Maki’s twin sister.</p>
-            <p><b>Jinichi Zenin:</b> Senior clan fighter.</p>
-            <p><b>Chojuro Zenin:</b> Conservative clan elder.</p>
-            <p><b>Ranta Zenin:</b> Sorcerer with paralysis technique.</p>
+            <p><b>Naobito Zenin:</b> Former head of the Zenin clan and elite sorcerer.</p>
+            <p><b>Naoya Zenin:</b> Arrogant heir who underestimated Maki.</p>
+            <p><b>Ogi Zenin:</b> Father of Maki and Mai, obsessed with clan honor.</p>
+            <p><b>Maki Zenin:</b> Clan member who defied tradition.</p>
+            <p><b>Mai Zenin:</b> Maki’s twin sister with limited cursed energy.</p>
+            <p><b>Jinichi Zenin:</b> Senior clan fighter loyal to hierarchy.</p>
+            <p><b>Chojuro Zenin:</b> Conservative elder of the clan.</p>
+            <p><b>Ranta Zenin:</b> Sorcerer with paralysis abilities.</p>
         </div>
+
     </div>
 
 </body>
