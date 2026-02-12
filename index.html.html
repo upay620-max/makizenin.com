@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MAKI Zenin</title>
+
+    <style>
+        body {
+            background-color: #0b0b0b;
+            color: #e6e6e6;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: darkred;
+            font-size: 64px;
+            font-weight: 900;
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 10px black;
+        }
+
+        img {
+            max-width: 80%;
+            border: 4px solid darkred;
+            box-shadow: 0 0 25px rgba(139, 0, 0, 0.8);
+            margin: 30px 0;
+        }
+
+        .text {
+            max-width: 900px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: darkred;
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 10px black;
+        }
+
+        button:hover {
+            background-color: red;
+        }
+
+        .family-tree {
+            display: none;
+            max-width: 900px;
+            margin: 40px auto;
+            text-align: left;
+            border-top: 2px solid darkred;
+            padding-top: 20px;
+        }
+
+        .family-tree h2 {
+            color: darkred;
+            text-align: center;
+        }
+
+        .family-tree p {
+            margin: 10px 0;
+        }
+    </style>
+
+    <script>
+        function toggleTree() {
+            const tree = document.getElementById("tree");
+            if (tree.style.display === "none") {
+                tree.style.display = "block";
+            } else {
+                tree.style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>MAKI</h1>
+
+    <img src="./ooo.png" alt="Maki Zenin">
+
+    <div class="text">
+        <p>1. Maki Zenin is a central character in <em>Jujutsu Kaisen</em>.</p>
+        <p>2. She was born into the elite Zenin clan but lacked cursed energy.</p>
+        <p>3. Because of this, she was treated as inferior within her family.</p>
+        <p>4. Maki compensates with extreme physical strength and discipline.</p>
+        <p>5. She uses cursed weapons instead of cursed techniques.</p>
+        <p>6. Her goal is to dismantle the Zenin clan’s corrupt hierarchy.</p>
+        <p>7. Maki is cold on the outside but deeply loyal.</p>
+        <p>8. She shares a tragic bond with her twin sister, Mai.</p>
+        <p>9. Her growth later makes her one of the strongest fighters.</p>
+        <p>10. Maki symbolizes strength born from rejection.</p>
+    </div>
+
+    <button onclick="toggleTree()">Zenin Family Tree</button>
+
+    <div class="family-tree" id="tree">
+        <h2>Zenin Family Tree</h2>
+
+        <p><strong>Naobito Zenin:</strong> Former head of the Zenin clan and a powerful sorcerer.</p>
+        <p><strong>Naoya Zenin:</strong> Arrogant heir who despised Maki and Mai.</p>
+        <p><strong>Ogi Zenin:</strong> Father of Maki and Mai, obsessed with clan status.</p>
+        <p><strong>Maki Zenin:</strong> Rejected daughter who defied clan traditions.</p>
+        <p><strong>Mai Zenin:</strong> Maki’s twin sister with limited cursed energy.</p>
+        <p><strong>Jinichi Zenin:</strong> Senior clan member loyal to Zenin authority.</p>
+        <p><strong>Chojuro Zenin:</strong> Conservative elder supporting clan rules.</p>
+        <p><strong>Ranta Zenin:</strong> Young sorcerer with paralysis techniques.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
