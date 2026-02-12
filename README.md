@@ -1,1 +1,1 @@
-# index.html
+# makizenin.com
